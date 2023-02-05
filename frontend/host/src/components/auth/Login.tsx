@@ -24,7 +24,7 @@ const Login = () => {
                 </label>
                 <button type="submit">Log in</button>
             </form>
-                <button onClick={() => navigate('/signup')}>Sign Up</button>
+            <button onClick={() => navigate('/signup')}>Sign Up</button>
         </div>
     );
 }

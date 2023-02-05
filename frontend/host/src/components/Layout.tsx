@@ -10,7 +10,7 @@ const Layout = ({children}: LayoutType) => {
     const {logout} = useAuth();
 
     return <div>
-        <h1>Layout boii</h1>
+        <h4>Layout boii</h4>
         <button onClick={logout}>Sign Out</button>
         <ul>
             <li>

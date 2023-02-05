@@ -1,0 +1,1 @@
+export const TOP_GEAR_URL = 'https://www.topgear.com'

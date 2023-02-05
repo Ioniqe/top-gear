@@ -1,18 +1,18 @@
 import * as React from 'react';
-import useLoadAbout from "../hooks/about.hook";
+import {useState} from 'react';
+import About from "./About";
+import Reviews from "./Reviews";
 
 export const TopGear = () => {
-    const {about, aboutIsLoading} = useLoadAbout();
+    const [showAbout, setShowAbout] = useState<boolean>(false);
 
-    return <>
+    return <div>
+        <button onClick={() => setShowAbout(true)}>About Page</button>
+        <button onClick={() => setShowAbout(false)}>Reviews by body style</button>
+
         {
-            aboutIsLoading ?
-                <h1>Loading...</h1> :
-                <>
-                    <h5>Name: {about.name}</h5>
-                    <h5>Description: {about.description}</h5>
-                    <h5>Author: {about.author}</h5>
-                </>
+            showAbout ?
+                <About/> : <Reviews/>
         }
-    </>
+    </div>
 }

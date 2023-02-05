@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
 import {getAboutService} from "../services";
-import {AboutType} from "../types";
+import {About} from "../types";
 
 const useLoadAbout = () => {
     const [aboutIsLoading, setAboutIsLoading] = useState<boolean>(true);
-    const [about, setAbout] = useState<AboutType>(null)
+    const [about, setAbout] = useState<About>(null)
 
     useEffect(() => {
         getAbout().then();
@@ -12,7 +12,7 @@ const useLoadAbout = () => {
 
     const getAbout = async () => {
         try{
-            const _about: AboutType = await getAboutService();
+            const _about: About = await getAboutService();
             setAbout(_about)
             setAboutIsLoading(false)
         }catch (err) {
