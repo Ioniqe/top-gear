@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {useState} from "react";
 import About from "./About";
+import CarList from "./CarList";
 
 export const Cars = () => {
     const [showAbout, setShowAbout] = useState<boolean>(true);
@@ -11,7 +12,7 @@ export const Cars = () => {
 
         {
             showAbout ?
-                <About/> : null
+                <About/> : <CarList/>
         }
     </div>
 }

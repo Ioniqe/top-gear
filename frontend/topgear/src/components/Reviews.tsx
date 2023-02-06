@@ -44,8 +44,6 @@ const Reviews = () => {
         }
     }
 
-    console.log(reviews)
-
     return <Box
         display={'flex'}
         width={'100%'}

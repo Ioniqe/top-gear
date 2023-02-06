@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const carsRoute = express.Router();
 
-carsRoute.get("/make", (req, res) => {
+carsRoute.post("/make", (req, res) => {
     const make = req.body.make
 
     const url = `https://api.api-ninjas.com/v1/cars?make=${make}`
@@ -15,7 +15,7 @@ carsRoute.get("/make", (req, res) => {
     }
 
     axios.get(url, config).then(response => {
-        res.send({result: response.data});
+        res.send({data: response.data});
     })
     .catch(error => {
         console.log(error);
