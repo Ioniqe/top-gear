@@ -3,10 +3,11 @@ import * as ReactDOM from 'react-dom';
 import { Cars } from "./components/Cars";
 
 import "./index.css";
+import {Box} from "@mui/material";
 
 const App = () => (
-  <div className="container">
+  <Box display={'flex'} width={'100%'} flex={1}>
       <Cars/>
-  </div>
+  </Box>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

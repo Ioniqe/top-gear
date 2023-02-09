@@ -10,10 +10,11 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 import AuthProvider from "./containers/AuthProvider";
+import {Box} from "@mui/material";
 
 const App = () => (
-    <BrowserRouter>
-        <div className="container">
+    <Box width={'100%'} height={'100%'} display={'flex'} justifyContent={'center'}>
+        <BrowserRouter>
             <AuthProvider>
                 <Routes>
                     <Route path={'/'} element={<Navigate to={"/login"} replace/>}/>
@@ -38,7 +39,7 @@ const App = () => (
                     />
                 </Routes>
             </AuthProvider>
-        </div>
-    </BrowserRouter>
+        </BrowserRouter>
+    </Box>
 );
 ReactDOM.render(<App/>, document.getElementById("app"));

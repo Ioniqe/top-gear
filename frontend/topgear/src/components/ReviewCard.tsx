@@ -10,7 +10,7 @@ type ReviewCardProps = {
 const ReviewCard = ({review}: ReviewCardProps) => {
     return <Box
         width={'100%'}
-        height={'100%'}
+        height={'min-height'}
         display={'flex'}
         justifyContent={'center'}
         flexDirection={'column'}
@@ -27,7 +27,6 @@ const ReviewCard = ({review}: ReviewCardProps) => {
         <Typography variant={'subtitle1'}>{review.attributes.title}</Typography>
         <Typography variant={'subtitle1'}>{review.attributes.name}</Typography>
         <Typography variant={'subtitle1'}>{review.attributes.whatWeSay}</Typography>
-        <Typography variant={'subtitle1'}>{review.attributes.verdict}</Typography>
         <Typography variant={'subtitle1'}>rating: {review.attributes.rating}</Typography>
     </Box>
 }

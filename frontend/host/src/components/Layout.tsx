@@ -1,6 +1,8 @@
 import * as React from 'react';
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import useAuth from "../auth.hook";
+import {Box, Button, Typography} from "@mui/material";
+import {lightBlue} from '@mui/material/colors';
 
 type LayoutType = {
     children: React.ReactNode
@@ -8,21 +10,43 @@ type LayoutType = {
 
 const Layout = ({children}: LayoutType) => {
     const {logout} = useAuth();
+    const navigate = useNavigate();
 
-    return <div>
-        <h4>Layout boii</h4>
-        <button onClick={logout}>Sign Out</button>
-        <ul>
-            <li>
-                <Link to="/top-gear">Top Gear</Link>
-            </li>
-            <li>
-                <Link to="/cars">Cars</Link>
-            </li>
-        </ul>
+    return <Box
+        width={'100%'}
+        height={'100%'}
+        display={'flex'}
+        flexDirection={'column'}
+        alignItems={'center'}
+        justifyContent={'start'}>
+        <Box
+            display={'flex'}
+            alignItems={'center'}
+            justifyContent={'space-between'}
+            width={'100%'}
+            height={'64px'}
+            sx={{
+                bgcolor: lightBlue[600],
+            }}>
+            <Typography variant={'h4'} px={2} color={'white'}>Welcome</Typography>
+            <Box display={'flex'}
+                 alignItems={'center'}
+                 justifyContent={'end'}
+                 px={2}>
+                <Button sx={{color: 'white'}} onClick={() => navigate('/top-gear')}>Top Gear</Button>
+                <Button sx={{color: 'white'}} onClick={() => navigate('/cars')}>Cars</Button>
+                <Button sx={{color: 'white'}} onClick={logout}>Sign Out</Button>
+            </Box>
+        </Box>
 
-        {children}
-    </div>
+        <Box
+            display={'flex'}
+            width={'100%'}>
+            {
+                children
+            }
+        </Box>
+    </Box>
 }
 
 export default Layout;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useState} from 'react';
-import {Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent} from "@mui/material";
+import {Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Typography} from "@mui/material";
 import {BodyStyleType, ReviewType} from "../types";
 import useLoadReviews from "../hooks/reviews.hook";
 import ReviewCard from "./ReviewCard";
@@ -52,7 +52,7 @@ const Reviews = () => {
         alignItems={'start'}
         flexDirection={'column'}
     >
-        <FormControl fullWidth>
+        <FormControl fullWidth sx={{mt: 1, mb: 2}}>
             <InputLabel>Body Style</InputLabel>
             <Select
                 value={chosenBodyStyle}
@@ -67,7 +67,7 @@ const Reviews = () => {
         </FormControl>
 
         {
-            reviewsLoading ? <h4>Loading</h4> : <Box
+            reviewsLoading ? <Typography variant={'body1'}>Loading</Typography> : <Box
                 width={'100%'}
                 height={'100%'}
                 display={'flex'}

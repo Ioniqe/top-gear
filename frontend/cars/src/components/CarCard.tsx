@@ -9,7 +9,7 @@ type CarCardProps = {
 const CarCard = ({car}: CarCardProps) => {
     return <Box
         width={'100%'}
-        height={'100%'}
+        height={'min-content'}
         display={'flex'}
         justifyContent={'center'}
         flexDirection={'column'}

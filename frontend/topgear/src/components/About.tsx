@@ -1,5 +1,6 @@
 import * as React from 'react';
 import useLoadAbout from "../hooks/about.hook";
+import {Typography} from "@mui/material";
 
 const About = () => {
     const {about, aboutIsLoading} = useLoadAbout();
@@ -7,11 +8,11 @@ const About = () => {
     return <>
         {
             aboutIsLoading ?
-                <h1>Loading...</h1> :
+                <Typography variant={'h4'} pt={3}>Loading...</Typography> :
                 <>
-                    <h5>Name: {about.name}</h5>
-                    <h5>Description: {about.description}</h5>
-                    <h5>Author: {about.author}</h5>
+                    <Typography variant={'h4'}>Name: {about.name}</Typography>
+                    <Typography variant={'h4'} py={3}>Description: {about.description}</Typography>
+                    <Typography variant={'h4'}>Author: {about.author}</Typography>
                 </>
         }
     </>

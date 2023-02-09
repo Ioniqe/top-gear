@@ -1,6 +1,7 @@
 import * as React from 'react';
 import useAuth from "../../auth.hook";
 import {useNavigate} from "react-router-dom";
+import {Button, Typography} from "@mui/material";
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -8,19 +9,19 @@ const Signup = () => {
 
     return (
         <div>
-            <h1>Sign up</h1>
+            <Typography variant={'h4'}>Sign up</Typography>
             <form onSubmit={signup}>
                 <label>
                     Email
-                    <input name="email" type="email" placeholder="Email" />
+                    <input name="email" type="email" placeholder="Email"/>
                 </label>
                 <label>
                     Password
-                    <input name="password" type="password" placeholder="Password" />
+                    <input name="password" type="password" placeholder="Password"/>
                 </label>
-                <button type="submit">Sign Up</button>
+                <Button type="submit">Sign Up</Button>
             </form>
-            <button onClick={() => navigate('/login')}>Log in</button>
+            <Button onClick={() => navigate('/login')}>Log in</Button>
         </div>
     );
 }

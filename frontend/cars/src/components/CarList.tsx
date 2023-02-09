@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Box, Button, TextField} from "@mui/material";
+import {Box, Button, TextField, Typography} from "@mui/material";
 import {useState} from "react";
 import useLoadCars from "../hooks/cars.hook";
 import {CarType} from "../types";
@@ -24,19 +24,20 @@ const CarList = () => {
         display={'flex'}
         width={'100%'}
         height={'100%'}
-        justifyContent={'space-between'}
-        alignItems={'start'}
+        justifyContent={'center'}
+        alignItems={'center'}
         flexDirection={'column'}>
         <TextField
             label="Car Make"
             variant="outlined"
             value={make}
             onChange={(e) => setMake(e.target.value)}
+            sx={{width: '100%'}}
         />
         <Button onClick={handleSearch}>Search</Button>
 
         {
-            carsLoading ? <h4>Loading</h4> : <Box
+            carsLoading ? <Typography variant={'body1'}>Loading</Typography> : <Box
                 width={'100%'}
                 height={'100%'}
                 display={'flex'}

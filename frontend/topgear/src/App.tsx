@@ -3,10 +3,11 @@ import * as ReactDOM from 'react-dom';
 import { TopGear } from "./components/TopGear";
 
 import "./index.css";
+import {Box} from "@mui/material";
 
 const App = () => (
-  <div className="container">
+  <Box display={'flex'} width={'100%'} flex={1}>
     <TopGear/>
-  </div>
+  </Box>
 );
 ReactDOM.render(<App />, document.getElementById("app"));
