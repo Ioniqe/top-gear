@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  host:
+    build: ./host
+    container_name: host_f
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
+  top_gear:
+    build: ./topgear
+    container_name: top_gear_f
+    ports:
+      - '3001:3001'
+    stdin_open: true
+    tty: true
+  cars:
+    build: ./cars
+    container_name: cars_f
+    ports:
+      - '3002:3002'
+    stdin_open: true
+    tty: true

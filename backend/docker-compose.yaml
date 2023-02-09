@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  cars:
+    build: ./cars
+    container_name: cars_b
+    ports:
+      - '8081:8081'
+    stdin_open: true
+    tty: true
+  top_gear:
+    build: ./top-gear
+    container_name: top_gear_b
+    ports:
+      - '8080:8080'
+    stdin_open: true
+    tty: true
